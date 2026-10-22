@@ -94,6 +94,8 @@ We measured it with the power off, by continuity between each contact of the jac
 - The port carries the bus **and** the thermostat's 24 V supply, so the listener could plug in there instead of using
   the terminals. That would also let thermostat 1 close flush in its case. The listener described above still uses the
   terminals and does not draw power from the bus.
+- **Measured supply:** 27.6 V AC between `24~` and `GND` in normal operation (2026-10-22), so this installation is AC.
+  The peak is about 39 V. A converter on this line needs an input rating well above that.
 - **Powering anything from this 24 V:** Delta devices use half-wave rectification and share one transformer, with `GND`
   common to all of them (report, section 12). Use a single diode, or an isolated converter. **Never** use a bridge
   rectifier feeding a non-isolated supply: the board's ground would then no longer be the bus ground.
