@@ -1,0 +1,14 @@
+# Every .sh here runs inside the Linux container. A Windows working copy
+# rewriting them to CRLF turns "#!/bin/sh" into an interpreter that does not
+# exist.
+*.sh text eol=lf
+
+# Captures are raw bus bytes; a line-ending rewrite would corrupt them.
+*.bin binary
+*.raw binary
+*.pcap binary
+*.png binary
+*.jpg binary
+
+# The reference captures are compared byte for byte by the replay test.
+captures/** -text

@@ -1,0 +1,14 @@
+FROM python:3.12-slim
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+      build-essential git curl ca-certificates \
+ && rm -rf /var/lib/apt/lists/*
+
+RUN pip install --no-cache-dir platformio==6.1.16
+
+ENV PLATFORMIO_CORE_DIR=/pio \
+    PLATFORMIO_BUILD_DIR=/build/pio \
+    PLATFORMIO_BUILD_CACHE_DIR=/pio/cache \
+    PLATFORMIO_DISABLE_PROGRESSBAR=true
+
+WORKDIR /work/firmware

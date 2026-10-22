@@ -1,0 +1,27 @@
+offset_bin,time,texte
+0,1792199963.558143,DEBUT port=/dev/cu.usbserial-BG03RPLB baud=76800 8N1
+307820,1792200207.735488,MARQUEUR DEBUT test 1 : référence 60 s sans toucher. T1 ext 5 int 21.7 csg 20.0 ; T2 ext 5 int 21.4 csg 20.0
+507426,1792200365.516233,MARQUEUR FIN test 1. T1 int 21.3 csg 20.0 ; T2 int 21.1 csg 20.0
+517106,1792200373.120552,MARQUEUR DEBUT test 2 : T1 (chambre) 3 appuis sur HAUT espacés de 2 s
+589884,1792200430.755434,MARQUEUR FIN test 2. T1 csg 20.3
+611523,1792200447.844264,"MARQUEUR DEBUT test 3 : T1 (chambre) 3 appuis sur BAS espacés de 2 s, retour à 20.0"
+715896,1792200529.853445,MARQUEUR FIN test 3. T1 csg 20.0
+726265,1792200537.802164,MARQUEUR DEBUT test 4a : T2 (salon) 3 appuis sur HAUT espacés de 2 s
+801130,1792200596.912492,MARQUEUR FIN test 4a. T2 csg 20.3
+807276,1792200601.881453,"MARQUEUR DEBUT test 4b : T2 (salon) 3 appuis sur BAS espacés de 2 s, retour à 20.0"
+870436,1792200651.502223,MARQUEUR FIN test 4b. T2 csg 20.0
+1008081,1792200761.107334,MARQUEUR DEBUT test 5 : main près du capteur de T1 (chambre) pendant 60 s
+1122402,1792200851.641830,MARQUEUR FIN test 5. T1 int 21.8
+1142086,1792200866.922469,MARQUEUR DEBUT test 6a : T2 (salon) un appui sur OFF
+1210396,1792200920.925140,MARQUEUR FIN test 6a. T2 icône ventilateur disparue
+1221352,1792200929.556119,MARQUEUR DEBUT test 6b : T2 (salon) un appui sur ON
+1307148,1792200997.745704,"MARQUEUR FIN test 6b. T2 mot ON affiché près de temp ext, icône ventilateur absente"
+1324081,1792201011.273465,MARQUEUR DEBUT test 6c : T1 (chambre) un appui sur ON
+1422103,1792201088.692149,MARQUEUR FIN test 6c. T1 rien de changé à l'écran
+1436482,1792201100.486544,MARQUEUR DEBUT test 6d : T1 (chambre) un appui sur OFF
+1482592,1792201136.567980,MARQUEUR FIN test 6d. T1 rien de changé à l'écran
+1962549,1792201518.009228,MARQUEUR DEBUT test 7 : T2 (salon) baisse de consigne pour faire réapparaître le ventilateur (consigne initiale 20.0)
+2011330,1792201556.086943,"MARQUEUR FIN test 7. T2 csg 19.3, ventilateur réapparu"
+2041002,1792201580.125109,"MARQUEUR DEBUT remise en état : T2 (salon) 7 appuis HAUT, de 19.3 à 20.0"
+2121133,1792201642.795232,"MARQUEUR FIN remise en état. T2 csg 20.0, ventilateur toujours affiché"
+2305087,1792201788.937557,FIN octets=2305087

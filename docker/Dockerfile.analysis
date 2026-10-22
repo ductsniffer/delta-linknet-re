@@ -1,0 +1,8 @@
+# Offline analysis of the captures: raw stream -> frames, .bin, .pcap,
+# statistics and plots (tools/analysis/). Separate from the build image so
+# the toolchain image stays small.
+FROM python:3.12-slim
+
+RUN pip install --no-cache-dir matplotlib==3.9.2 numpy==2.1.2
+
+WORKDIR /work

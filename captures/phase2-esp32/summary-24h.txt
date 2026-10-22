@@ -1,0 +1,74 @@
+session 20261020-etape4: 3 raw file(s)
+  esp32-20261020-etape4-raw-001.raw: 21488 bytes over 28.0 s, 2659 frames, lost-before flags 1, board header: image=listener now_us=17599920 record=6 pending=8192 lost=14024
+  esp32-20261020-etape4-raw-002.raw: 33324 bytes over 26.6 s, 4143 frames, lost-before flags 1, board header: image=listener now_us=36038930 record=6 pending=8192 lost=14544
+  esp32-20261020-etape4-raw-003.raw: 109297536 bytes over 86958.9 s, 13548864 frames, lost-before flags 0, board header: image=listener now_us=56275147 record=6 pending=376 lost=14548
+time covered: 2026-10-20 20:51:21 .. 2026-10-21 21:01:36 (1450.2 min, with gaps between files)
+bytes 109352348, frames 13555666, header CRC errors 0, data CRC errors 0, bytes outside frames 0
+frames by type, source, destination (PollForMaster destinations pooled):
+  Token              0 -> 1    3641701
+  Token              1 -> 2    3641578
+  Token              2 -> 0    3641531
+  PollForMaster      2 -> *    2586284
+  DataNotExpReply    1 -> 0    11331
+  DataNotExpReply    2 -> 0    11147
+  DataNotExpReply    0 -> 2    11074
+  DataNotExpReply    0 -> 1    10994
+  DataNotExpReply    0 -> 255  26
+Delta private transfer services (service, source, destination):
+  SN12  1 -> 0  337
+  SN12  2 -> 0  73
+  SN13  0 -> 1  775
+  SN13  0 -> 2  854
+  SN14  0 -> 1  10219
+  SN14  0 -> 2  10220
+  SN15  1 -> 0  10994
+  SN15  2 -> 0  11074
+
+timing (us), from the board's byte stamps; a gap runs from the end of the
+last byte of a frame to the start of the first byte of the next:
+  after PollForMaster (silence) n=2586281 min=    18888 p50=    19495 p99=    19597 max=    20018 mean=    19486 us
+  after Token to 0             n=3641529 min=     1005 p50=     1224 p99=     1232 max=     1262 mean=     1223 us
+  after Token to 1             n=3641701 min=     2290 p50=     2321 p99=     2387 max=    21010 mean=     2333 us
+  after Token to 2             n=3641578 min=     2288 p50=     2356 p99=     2388 max=    19973 mean=     2345 us
+  after data from 0            n=22094   min=     1014 p50=     1237 p99=     1238 max=     1251 mean=     1236 us
+  after data from 1            n=11331   min=     2253 p50=     2279 p99=     2346 max=     2414 mean=     2288 us
+  after data from 2            n=11147   min=     2256 p50=     2322 p99=     2364 max=     2446 mean=     2330 us
+  token rotation seen at 0     n=3641696 min=     8877 p50=    29796 p99=    34156 max=    68640 mean=    23890 us
+  token rotation seen at 1     n=3641573 min=     8876 p50=    29796 p99=    30024 max=    69304 mean=    23891 us
+  token rotation seen at 2     n=3641526 min=     8882 p50=    29802 p99=    29884 max=    82453 mean=    23892 us
+  SN13 0->1 to SN15 ack        n=775     min=     4540 p50=     4736 p99=     4858 max=    26385 mean=     4886 us
+  SN14 0->1 to SN15 ack        n=10219   min=     4510 p50=     4736 p99=    26004 max=    47105 mean=     5028 us
+  SN13 0->2 to SN15 ack        n=854     min=     7947 p50=     8186 p99=     8326 max=    29460 mean=     8278 us
+  SN14 0->2 to SN15 ack        n=10220   min=     7945 p50=     8187 p99=     8312 max=    30254 mean=     8279 us
+  silence inside frames        n=95796682 min=      -18 p50=       10 p99=       38 max=      113 mean=        8 us
+bus load: 16.4 % of the time (1257 bytes/s)
+
+TimeSynchronization broadcasts (controller clock vs host clock at reception):
+  2026-10-20 21:12:09.277308 from 0: Tue 2026-10-20 21:12:07.86  (-1.42 s)
+  2026-10-20 22:12:06.712563 from 0: Tue 2026-10-20 22:12:05.53  (-1.18 s)
+  2026-10-20 23:12:05.284348 from 0: Tue 2026-10-20 23:12:03.16  (-2.12 s)
+  2026-10-21 00:12:06.919184 from 0: Wed 2026-10-21 00:12:05.12  (-1.80 s)
+  2026-10-21 01:12:07.226644 from 0: Wed 2026-10-21 01:12:05.98  (-1.25 s)
+  2026-10-21 02:12:06.790347 from 0: Wed 2026-10-21 02:12:04.88  (-1.91 s)
+  2026-10-21 03:12:05.008365 from 0: Wed 2026-10-21 03:12:03.09  (-1.92 s)
+  2026-10-21 04:12:07.134931 from 0: Wed 2026-10-21 04:12:05.81  (-1.32 s)
+  2026-10-21 05:12:07.630877 from 0: Wed 2026-10-21 05:12:04.89  (-2.74 s)
+  2026-10-21 06:12:07.580132 from 0: Wed 2026-10-21 06:12:06.12  (-1.46 s)
+  2026-10-21 07:12:05.093212 from 0: Wed 2026-10-21 07:12:03.89  (-1.20 s)
+  2026-10-21 08:12:08.213195 from 0: Wed 2026-10-21 08:12:05.42  (-2.79 s)
+  2026-10-21 09:12:06.764611 from 0: Wed 2026-10-21 09:12:04.74  (-2.02 s)
+  2026-10-21 10:05:27.459301 from 0: Wed 2026-10-21 10:05:26.43  (-1.03 s)
+  2026-10-21 10:12:06.616876 from 0: Wed 2026-10-21 10:12:05.37  (-1.25 s)
+  2026-10-21 11:12:08.117458 from 0: Wed 2026-10-21 11:12:04.60  (-3.52 s)
+  2026-10-21 12:12:06.386274 from 0: Wed 2026-10-21 12:12:03.75  (-2.64 s)
+  2026-10-21 13:00:02.154586 from 0: Wed 2026-10-21 12:59:59.40  (-2.75 s)
+  2026-10-21 13:12:07.597441 from 0: Wed 2026-10-21 13:12:05.56  (-2.04 s)
+  2026-10-21 14:12:05.870263 from 0: Wed 2026-10-21 14:12:04.71  (-1.16 s)
+  2026-10-21 15:12:07.245431 from 0: Wed 2026-10-21 15:12:04.82  (-2.43 s)
+  2026-10-21 16:12:08.543255 from 0: Wed 2026-10-21 16:12:05.97  (-2.57 s)
+  2026-10-21 17:12:08.448528 from 0: Wed 2026-10-21 17:12:03.80  (-4.65 s)
+  2026-10-21 18:12:06.834821 from 0: Wed 2026-10-21 18:12:04.24  (-2.59 s)
+  2026-10-21 19:12:06.559765 from 0: Wed 2026-10-21 19:12:04.06  (-2.50 s)
+  2026-10-21 20:12:05.299160 from 0: Wed 2026-10-21 20:12:04.32  (-0.98 s)
+
+console captures/esp32-20261020-etape3.log: 1802 zone lines, 46 keys, 15 markers

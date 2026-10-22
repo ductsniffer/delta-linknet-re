@@ -1,0 +1,44 @@
+# Build/test container. The host has no Python, no PlatformIO and no C/C++
+# compiler, so everything runs in here.
+#
+#   ./scripts/pio.ps1 --version
+#   ./scripts/test.ps1
+#   ./scripts/build.ps1
+#
+# The whole project is mounted, not just firmware/, so the native tests can
+# read ../captures/ and ../docs/example-frames.md.
+#
+# Two named volumes matter:
+#   pio-core  keeps the xtensa toolchain and the framework across runs
+#   pio-build keeps object files inside the Linux VM instead of on the
+#             Windows bind mount, which is worth 3-5x on compile time.
+
+name: delta-linknet-re
+
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    image: linknet-dev:1
+    init: true
+    working_dir: /work/firmware
+    volumes:
+      - ..:/work
+      - pio-core:/pio
+      - pio-build:/build
+
+  # ./scripts/analyze.ps1 <session>: tools/analysis/, matplotlib, no toolchain.
+  analysis:
+    build:
+      context: .
+      dockerfile: Dockerfile.analysis
+    image: linknet-analysis:1
+    init: true
+    working_dir: /work
+    volumes:
+      - ..:/work
+
+volumes:
+  pio-core:
+  pio-build:
