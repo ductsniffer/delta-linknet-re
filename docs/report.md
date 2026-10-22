@@ -356,5 +356,8 @@ reproduced here) confirm or complement the observations:
 - **Sensor:** an internal 10 kΩ thermistor, ±0.2 °C. An external thermistor replaces it when connected. The conversion to °C
   happens in the controller, which explains why service 12 carries a raw value.
 - **RJ11 jack under the thermostat:** a service port for Delta's service tools (for example a Bluetooth adapter for the
-  building network). Its pinout is not published. Do not plug anything into it before working it out with the power off.
+  building network). Its pinout is not published. We measured it: GND, not connected, NET−, NET+, 24 V, GND on pins 1 to
+  6 ([hardware.md](hardware.md#rj11-service-port)).
+- **Power:** 24 V AC or DC, 1.5 VA. Several Delta devices may share one transformer if the polarity of `24~` and `GND` is
+  the same on all of them. Devices with full-wave (bridge) rectification must not share it.
 - Recommended cabling: shielded twisted pair, 100 to 120 Ω. No termination below three nodes.

@@ -74,6 +74,30 @@ from closing flush in its case.*
 
 *Thermostat 2, showing the fan icon and the word “ON”, both sent by the controller in service 13 (bytes 39 and 43).*
 
+## RJ11 service port
+
+The DNS-24L has a 6P6C RJ11 jack on its board, meant for Delta's service tools. Delta does not publish its pinout.
+We measured it with the power off, by continuity between each contact of the jack and the thermostat's terminals:
+
+| RJ11 pin | Signal | Thermostat terminal |
+|---|---|---|
+| 1 | GND | `GND` |
+| 2 | not connected | — |
+| 3 | NET− | `NET −` |
+| 4 | NET+ | `NET +` |
+| 5 | 24 V | `24~` |
+| 6 | GND | `GND` |
+
+- **Pin numbering:** looking into the jack, latch slot at the bottom, pin 1 is on the left.
+- **Cables:** a standard flat telephone cable reverses the pins end to end (1↔6, 2↔5, 3↔4). GND stays on 1 and 6, but
+  NET+ and NET− swap, and 24 V moves to pin 2. Check the cable end to end before plugging anything in.
+- The port carries the bus **and** the thermostat's 24 V supply, so the listener could plug in there instead of using
+  the terminals. That would also let thermostat 1 close flush in its case. The listener described above still uses the
+  terminals and does not draw power from the bus.
+- **Powering anything from this 24 V:** Delta devices use half-wave rectification and share one transformer, with `GND`
+  common to all of them (report, section 12). Use a single diode, or an isolated converter. **Never** use a bridge
+  rectifier feeding a non-isolated supply: the board's ground would then no longer be the bus ground.
+
 ## ESP32 pins
 
 | Pin | Use |
